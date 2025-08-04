@@ -15,7 +15,7 @@ function App() {
   const [filterTag, setFilterTag] = useState<string | null>(null);
   const [editing, setEditing] = useState<LinkItem | null>(null);
 
-  // Load from localStorage once
+  // Load initial data
   useEffect(() => {
     setLinks(getLinks());
   }, []);
@@ -25,7 +25,7 @@ function App() {
     saveLinks(links);
   }, [links]);
 
-  // Add or update a link
+  // Add new or update existing link
   function handleSave(data: Omit<LinkItem, 'id'>) {
     if (editing) {
       setLinks((prev) =>
@@ -38,11 +38,11 @@ function App() {
       setLinks((prev) => [...prev, { id: uuidv4(), ...data }]);
     }
   }
-  // Delete
+  // Remove link by ID
   function handleDelete(id: string) {
     setLinks((prev) => prev.filter((lnk) => lnk.id !== id));
   }
-  // Filter logic
+  // Apply search and tag filters
   const filtered = links.filter((lnk) => {
     const matchText =
       lnk.title.includes(searchTerm) ||
@@ -51,11 +51,11 @@ function App() {
     const matchTag = filterTag ? lnk.tags?.includes(filterTag) : true;
     return matchText && matchTag;
   });
-  // Gather all tags
+  // Collect tags
   const allTags = Array.from(new Set(links.flatMap((lnk) => lnk.tags)));
   return (
     <div className="container">
-      <h1>Links Management System</h1>
+      <h1>Links-Valut</h1>
       <LinksForm onSave={handleSave} editing={editing} />
       <div className="filters">
         <SearchBar value={searchTerm} onChange={setSearchTerm} />

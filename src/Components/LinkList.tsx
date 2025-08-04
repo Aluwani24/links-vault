@@ -8,7 +8,7 @@ interface ListProps {
 }
 
 export default function LinkList({ links, onEdit, onDelete }: ListProps) {
-    if (!links.length) return <p>No bookmarks found.</p>;
+    if (!links.length) return <p>Bookmarks not found.</p>;
     return (
         <ul className="link-list">
             {links.map((lnk) => (

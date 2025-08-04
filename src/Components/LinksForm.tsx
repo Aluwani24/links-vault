@@ -58,11 +58,12 @@ export default function LinkForm({ onSave, editing }: FormProps) {
       />
       <input
         type="text"
-        placeholder="Tags (comma separated)"
+        placeholder="Tags (seperated by comma)"
         value={tags}
         onChange={(e) => setTags(e.target.value)}
       />
       <button type="submit">{editing ? 'Update' : 'Add'} Link</button>
+      
     </form>
   );
 }

@@ -1,4 +1,4 @@
-//defining the interface
+//interface
 export interface LinkItem {
   id:string;
   title:string;

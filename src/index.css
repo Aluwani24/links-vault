@@ -1,10 +1,4 @@
-:root {
-  --primary: #2b2d42;
-  --accent: #8d99ae;
-  --highlight: #ef233c;
-  --bg: #edf2f4;
-}
-
+/* Global Defaults */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,8 +7,8 @@
 
 body {
   font-family: sans-serif;
-  background: var(--bg);
-  color: var(--primary);
+  background: #edf2f4;
+  color: #2b2d42;
   padding: 1rem;
 }
 
@@ -23,17 +17,20 @@ body {
   margin: auto;
 }
 
+/* Headings */
 h1 {
   text-align: center;
   margin-bottom: 1rem;
 }
 
+/* Section Spacing */
 .link-form,
 .filters,
 .link-list {
   margin-bottom: 1.5rem;
 }
 
+/* Form & Input Elements */
 .link-form input,
 .link-form textarea,
 .search-bar,
@@ -41,20 +38,25 @@ h1 {
   width: 100%;
   padding: 0.5rem;
   margin-top: 0.5rem;
-  border: 1px solid var(--accent);
+  border: 1px solid #8d99ae;
   border-radius: 4px;
 }
 
 .link-form button {
   margin-top: 0.75rem;
   padding: 0.5rem 1rem;
-  background: var(--highlight);
+  background: #ef233c;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
+.link-form button:hover {
+  background: darkred;
+}
+
+/* Link List Layout */
 .link-list {
   list-style: none;
   display: grid;
@@ -62,10 +64,11 @@ h1 {
   gap: 1rem;
 }
 
+/* Link Card Styling */
 .link-item {
   background: #fff;
   padding: 1rem;
-  border: 1px solid var(--accent);
+  border: 1px solid #8d99ae;
   border-radius: 6px;
   display: flex;
   flex-direction: column;
@@ -79,8 +82,9 @@ h1 {
   margin-top: 0.5rem;
 }
 
+/* Tags */
 .tag {
-  background: var(--accent);
+  background: #8d99ae;
   color: #fff;
   padding: 0.2rem 0.5rem;
   margin-right: 0.25rem;
@@ -88,6 +92,7 @@ h1 {
   font-size: 0.8rem;
 }
 
+/* Action Buttons */
 .actions {
   margin-top: auto;
   display: flex;
@@ -98,11 +103,12 @@ h1 {
   flex: 1;
   padding: 0.5rem;
   border: none;
-  background: var(--accent);
+  background: #8d99ae;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
 }
+
 
 /* Responsive */
 @media (max-width: 600px) {
